@@ -29,8 +29,23 @@ public class Plataforma {
         int i=0;
         for(Profesor profesor: this.profesores){
             i++;
+            System.out.println(profesor.getNombre());
             System.out.println(""+i+"."+" "+profesor.getNombre());
         }
     }
+    public Profesor compararNombre(String nombre){
+        for(Profesor profesor: this.profesores){
+            if(nombre.equalsIgnoreCase(profesor.getNombre())){
+                return profesor;
+            }
+        }
+        return null;
+
+    }
+    public void addProyecto(String titulo, Profesor profesor){
+        Proyecto proyecto= new Proyecto(titulo,profesor);
+        this.proyectos.add(proyecto);
+    }
+
     
 }

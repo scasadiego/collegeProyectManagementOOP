@@ -1,9 +1,5 @@
 package main;
 
-import app.Estudiante;
-import app.Plataforma;
-import app.Profesor;
-
 
 public class Main {
     
@@ -13,15 +9,21 @@ public class Main {
      
         UI ui = new UI();
         
-        
-        int option = ui.main();
-        
-        switch(option){
-            case 1:
-                ui.crearEstudiante();
-                break;
-            case 2:
-                ui.crearProfesor(); 
+        int option=0;
+         while(option!=6){
+            option = ui.main();
+            switch(option){
+                case 1:
+                    ui.crearEstudiante();
+                    break;
+                case 2:
+                    ui.crearProfesor(); 
+                    break;
+                case 3:
+                    ui.crearProyecto();
+                    break;
+
+            }
         }
         
         

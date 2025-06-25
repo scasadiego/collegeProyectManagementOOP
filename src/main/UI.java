@@ -21,7 +21,10 @@ public class UI {
         System.out.println("Menu principal");
         System.out.println("1. Crear Estudiante");
         System.out.println("2. Crear profesor");
-        
+        System.out.println("3. Crear proyecto");
+        System.out.println("4. Asignar tutor");
+        System.out.println("5. Mostrar proyectos por estudiante");
+        System.out.println("6. Salir");
         int option = scan.nextInt();
         
         return option;
@@ -51,12 +54,8 @@ public class UI {
         
         System.out.println("Por favor ingrese el departamento");
         String departamento = this.scan.nextLine();
-        
-        this.plataforma.agregarProfesor(new Profesor(nombre, departamento));
-    }
-
-    public void mostrarProfesores(){
-        for(Profesor profesor: this.plataforma.profesores)
+        Profesor profesor=new Profesor(nombre, departamento);
+        this.plataforma.agregarProfesor(profesor);
     }
 
     public void crearProyecto(){
@@ -65,9 +64,18 @@ public class UI {
         String titulo=this.scan.nextLine();
 
         scan.nextLine();
-        System.out.println("Desea ver los profesores disponibles?() ");
+        System.out.println("Desea ver los profesores disponibles?(0:Si/1:No): ");
+        int opcion=this.scan.nextInt();
+        if(opcion==0){
+            this.plataforma.mostrarProfesores();
+        }
         System.out.println("Por favor ingrese el nombre del docente del proyecto: ");
-        int ID=this.scan.nextInt();
+        String nombreP= this.scan.nextLine();
+        Profesor profesor= plataforma.compararNombre(nombreP);
+        if(profesor!=null){
+            plataforma.addProyecto(titulo, profesor);
+        }
+        
 
     }
     

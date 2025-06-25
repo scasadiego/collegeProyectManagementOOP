@@ -15,9 +15,13 @@ public class Proyecto {
         this.tutor = tutor;
         this.integrantes = new ArrayList();
     }
+    public Proyecto(){}
     
     public void agregarEstudiante(Estudiante estudiante){
         this.integrantes.add(estudiante);
+    }
+    public void agregarProfesor(Profesor profesor){
+        this.tutor=profesor;
     }
     
     
