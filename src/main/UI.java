@@ -5,7 +5,6 @@ import app.Plataforma;
 import app.Profesor;
 import java.util.Scanner;
 
-
 public class UI {
     
     private Scanner scan;
@@ -32,17 +31,14 @@ public class UI {
     
     
     public void crearEstudiante(){
+        scan.nextLine();
         System.out.println("Menú de registro de estudiantes");
         System.out.println("Por favor ingrese el nombre: ");
         String nombre = this.scan.nextLine();
-        
-        scan.nextLine();
-        
         System.out.println("Por favor ingrese el documento de identidad");
         String id = this.scan.nextLine();
         
         this.plataforma.agregarEstudiante(new Estudiante(nombre, id));
-        
     }
     
     public void crearProfesor(){
@@ -83,6 +79,6 @@ public class UI {
     }
     
     public void mostrarProyectosEstudiante(){
-        
+
     }
 }
