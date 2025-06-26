@@ -17,7 +17,9 @@ public class Plataforma {
     public void agregarEstudiante(Estudiante estudiante){
         this.estudiantes.add(estudiante);
     }
-    
+    public void agregarEstudianteProyecto(Estudiante estudiante, Proyecto proyecto){
+        proyecto.agregarEstudiante(estudiante);
+    }
     public void agregarProfesor(Profesor profesor){
         this.profesores.add(profesor);
     }
@@ -77,6 +79,13 @@ public class Plataforma {
     public void addProyecto(String titulo, Profesor profesor){
         Proyecto proyecto= new Proyecto(titulo,profesor);
         this.proyectos.add(proyecto);
+    }
+    public void mostrarEstudianteProyectos(String nombre){
+        for(Proyecto proyecto: this.proyectos){
+            if(proyecto.buscarEstudiante(nombre)){
+                System.out.println("El estudiante hace parte del proyecto: "+proyecto.getTitulo());
+            }
+        }
     }
 
     
