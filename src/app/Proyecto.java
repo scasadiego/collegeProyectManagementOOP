@@ -17,6 +17,15 @@ public class Proyecto {
     }
     public Proyecto(){}
     
+    public String getTitulo(){
+        return this.titulo;
+    }
+    public void setTitulo(String titulo){
+        this.titulo=titulo;
+    }
+    public String getProfesor(){
+        return this.tutor.getNombre();
+    }
     public void agregarEstudiante(Estudiante estudiante){
         this.integrantes.add(estudiante);
     }
