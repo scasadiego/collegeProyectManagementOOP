@@ -46,12 +46,10 @@ public class UI {
     }
     
     public void crearProfesor(){
+        scan.nextLine();
         System.out.println("Menú de registro de profesores");
         System.out.println("Por favor ingrese el nombre: ");
         String nombre = this.scan.nextLine();
-        
-        scan.nextLine();
-        
         System.out.println("Por favor ingrese el departamento");
         String departamento = this.scan.nextLine();
         Profesor profesor=new Profesor(nombre, departamento);
@@ -59,21 +57,22 @@ public class UI {
     }
 
     public void crearProyecto(){
+        scan.nextLine();       
         System.out.println("Menú de registro de proyectos: ");
         System.out.println("Por favor ingrese el titulo del proyecto: ");
         String titulo=this.scan.nextLine();
-
-        scan.nextLine();
         System.out.println("Desea ver los profesores disponibles?(0:Si/1:No): ");
-        int opcion=this.scan.nextInt();
+        byte opcion=this.scan.nextByte();
         if(opcion==0){
             this.plataforma.mostrarProfesores();
         }
+        scan.nextLine();
         System.out.println("Por favor ingrese el nombre del docente del proyecto: ");
         String nombreP= this.scan.nextLine();
         Profesor profesor= plataforma.compararNombre(nombreP);
         if(profesor!=null){
             plataforma.addProyecto(titulo, profesor);
+            System.out.println("Se creo exitosamente el proyecto "+titulo+" con el profesor: "+nombreP);
         }
         
 
