@@ -32,7 +32,14 @@ public class Proyecto {
     public void agregarProfesor(Profesor profesor){
         this.tutor=profesor;
     }
-    
+    public boolean buscarEstudiante(String nombre){
+        for(Estudiante estudiante: this.integrantes){
+            if(nombre.equalsIgnoreCase(estudiante.getName())){
+                return true;
+            }
+        }
+        return false; 
+    }
     
      
     
