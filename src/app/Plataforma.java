@@ -29,10 +29,42 @@ public class Plataforma {
         int i=0;
         for(Profesor profesor: this.profesores){
             i++;
-            System.out.println(profesor.getNombre());
             System.out.println(""+i+"."+" "+profesor.getNombre());
         }
     }
+    public void mostrarProyectos(){
+        int i=0;
+        for(Proyecto proyecto: this.proyectos){
+            i++;
+            System.out.println(""+i+"."+" "+proyecto.getTitulo());
+        }
+    }
+    public void mostrarEstudiantes(){
+        int i=0;
+        for(Estudiante estudiante: this.estudiantes){
+            i++;
+            System.out.println(""+i+"."+" "+estudiante.getName());
+        }
+    }
+
+    public Estudiante compararNombreE(String nombre){
+        for(Estudiante estudiante: this.estudiantes){
+            if(nombre.equalsIgnoreCase(estudiante.getName())){
+                return estudiante;
+            }
+        }
+        return null;
+    }
+
+    public Proyecto compararNombreP(String nombre){
+        for(Proyecto proyecto: this.proyectos){
+            if(nombre.equalsIgnoreCase(proyecto.getTitulo())){
+                return proyecto;
+            }
+        }
+        return null;
+    }
+
     public Profesor compararNombre(String nombre){
         for(Profesor profesor: this.profesores){
             if(nombre.equalsIgnoreCase(profesor.getNombre())){
