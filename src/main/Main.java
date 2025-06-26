@@ -22,7 +22,12 @@ public class Main {
                 case 3:
                     ui.crearProyecto();
                     break;
-
+                case 4:
+                    ui.asignarTutor();
+                    break;
+                case 5:
+                    ui.mostrarProyectosEstudiante();
+                    break;
             }
         }
         
