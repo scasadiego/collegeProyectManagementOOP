@@ -10,7 +10,7 @@ public class Main {
         UI ui = new UI();
         
         int option=0;
-         while(option!=6){
+         while(option!=7){
             option = ui.main();
             switch(option){
                 case 1:
@@ -27,6 +27,9 @@ public class Main {
                     break;
                 case 5:
                     ui.mostrarProyectosEstudiante();
+                    break;
+                case 6:
+                    ui.asignarEstudiantesProyecto();
                     break;
             }
         }
