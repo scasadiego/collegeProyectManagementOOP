@@ -87,6 +87,9 @@ public class Plataforma {
             }
         }
     }
+    public void agregarIntegrante(Estudiante estudiante, Proyecto proyecto){
+        proyecto.agregarEstudiante(estudiante);
+    }
 
     
 }
