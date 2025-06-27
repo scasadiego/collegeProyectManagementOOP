@@ -1,6 +1,5 @@
 package main;
 
-//Hay que hacer una funcion para asignar proyectos a estudiantes antes de lo de mostrarlos
 public class Main {
     
 
@@ -33,6 +32,7 @@ public class Main {
                     break;
             }
         }
+        System.out.println("Hasta luego");
         
         
     }
