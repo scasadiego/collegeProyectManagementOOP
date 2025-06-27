@@ -24,7 +24,8 @@ public class UI {
         System.out.println("3. Crear proyecto");
         System.out.println("4. Asignar tutor");
         System.out.println("5. Mostrar proyectos por estudiante");
-        System.out.println("6. Salir");
+        System.out.println("6. Asignar estudiante a un proyecto");
+        System.out.println("7. Salir");
         int option = scan.nextInt();
         
         return option;
@@ -126,5 +127,32 @@ public class UI {
             plataforma.mostrarEstudianteProyectos(nombreE);
         }
     }
-
+    public void asignarEstudiantesProyecto(){
+        scan.nextLine();
+        System.out.println("Menú de asignación de estudiantes: ");
+        System.out.println("Desea ver los estudiantes registrados?(0:Si/1:No) ");
+        byte opcion=this.scan.nextByte();
+        if(opcion==0){
+            plataforma.mostrarEstudiantes();
+        }
+        scan.nextLine();
+        System.out.println("Ingrese el nombre del estudiante: ");
+        String nombreE=this.scan.nextLine();
+        Estudiante estudiante= plataforma.compararNombreE(nombreE);
+        if(estudiante!=null){
+            System.out.println("Desea ver los proyectos activos?(0:Si/1:No) ");
+            opcion=this.scan.nextByte();
+            if(opcion==0){
+                plataforma.mostrarProyectos();
+            }
+            scan.nextLine();
+            System.out.println("Ingrese el nombre del proyecto: ");
+            String nombreP=this.scan.nextLine();
+            Proyecto proyecto=plataforma.compararNombreP(nombreP);
+            if(proyecto!=null){
+                plataforma.agregarIntegrante(estudiante, proyecto);
+                System.out.println("Se agregó correctamente al estudiante: "+nombreE+" al proyecto "+nombreP);
+            }
+        }
+    }
 }
